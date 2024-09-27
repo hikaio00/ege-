@@ -1,0 +1,17 @@
+def f(number):
+    num_str = str(number)
+    a, b, c, d = int(num_str[0]), int(num_str[1]), int(num_str[2]), int(num_str[3])
+    s1, s2, s3 = a+b, b+c, c+d
+    ss = [s1, s2, s3]
+    min_s = min(ss)
+    ss.remove(min_s)
+    ss.sort()
+    result = int(str(ss[0]) + str(ss[1]))
+
+    return result
+
+xmax = 0
+for i in range(1000, 10000):
+    if f(i) == 1315:
+        xmax = i
+print(xmax)
